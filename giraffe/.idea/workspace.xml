@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="457066a7-281f-479c-b8cb-30216b75df94" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="giraffe" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bUncbQDReDPitgSwKP0TuqAXnD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.py" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\open-and-virtualized-network\giraffe" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="giraffe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="useful-tools" type="PythonConfigurationType" factoryName="Python">
+      <module name="giraffe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.useful-tools" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="457066a7-281f-479c-b8cb-30216b75df94" name="Default Changelist" comment="" />
+      <created>1588695619902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588695619902</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="0" key="#Inspections" timestamp="1589072892223">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="#Inspections/0.0.1280.680@0.0.1280.680" timestamp="1589072892223" />
+    <state x="233" y="0" key="#Notifications" timestamp="1588696043499">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="0" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1588696043499" />
+    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590410496023">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1590410496023" />
+    <state x="73" y="147" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589068491148">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="73" y="147" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1589068491148" />
+    <state x="40" y="0" key="#scratch" timestamp="1589032036246">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="40" y="0" key="#scratch/0.0.1280.680@0.0.1280.680" timestamp="1589032036246" />
+    <state x="325" y="95" key="FileChooserDialogImpl" timestamp="1590410493350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="325" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590410493350" />
+    <state width="632" height="172" key="GridCell.Tab.0.bottom" timestamp="1590573165630">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="632" height="172" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
+    <state width="632" height="172" key="GridCell.Tab.0.center" timestamp="1590573165630">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="632" height="172" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
+    <state width="632" height="172" key="GridCell.Tab.0.left" timestamp="1590573165630">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="632" height="172" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
+    <state width="632" height="172" key="GridCell.Tab.0.right" timestamp="1590573165630">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="632" height="172" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
+    <state width="1259" height="204" key="GridCell.Tab.1.bottom" timestamp="1589724096423">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
+    <state width="1259" height="204" key="GridCell.Tab.1.center" timestamp="1589724096423">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
+    <state width="1259" height="204" key="GridCell.Tab.1.left" timestamp="1589724096423">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
+    <state width="1259" height="204" key="GridCell.Tab.1.right" timestamp="1589724096423">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1588720047732">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588720047732" />
+    <state x="23" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1590410382877">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="23" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1590410382877" />
+    <state x="-17" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1589723096253">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="-17" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1589723096253" />
+  </component>
+</project>
