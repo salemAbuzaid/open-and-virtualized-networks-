@@ -1,11 +1,22 @@
 from math import *  # this line to import a library of math
+import numpy
+import pandas as pd
+import matplotlib.pyplot as plt
 import useful_tools
 from student import student
 from question import question
 from chinese_chef import chinese_chef
-import generateBinn
-list =[0, 0, 0]
-generateBinn.generate_binary(0, 2,list)
+from list_t import list_t
+from generateBinn import generate_binary
+
+
+def main():
+    list = [0] * 3
+    generate_binary(0, 2, list)
+
+
+if __name__ == "__main__":
+    main()
 
 character_name = "George"
 age = "50.54"
@@ -37,29 +48,29 @@ print(30 % 4)
 print(int(30 / 4))
 # the usage of math library startes from here
 
-print("the flour is:"+str(floor(7.6)))
+print("the flour is:" + str(floor(7.6)))
 print(ceil(7.6))
 print(sqrt(30))
+'''
+#getting inputs from users
+name =input("Enter your name: ")
+age =input("Enter your age: ")
+print("hello "+ name +" you are " + age + " years old")
 
-# getting inputs from users
-
-# name =input("Enter your name: ")
-# age =input("Enter your age: ")
-# print("hello "+ name +" you are " + age + " years old")
-
-# creating a calulator
-# num1 = input("Enter the first number: ")
-# num2 = input("Enter the second number: ")
-# result = float(num1) + float(num2)
-# print(result)
+#creating a calulator
+num1 = input("Enter the first number: ")
+num2 = input("Enter the second number: ")
+result = float(num1) + float(num2)
+print(result)
 
 # mad libs game
-# color = input("Enter a color:")
-# plural_noun = input("Enter a plural noun:")
-# celebrity  = input("Enter a celebrity")
-# print("roses are "+ color )
-# print(plural_noun +" are blu")
-# print("I love "+ celebrity)
+color = input("Enter a color:")
+plural_noun = input("Enter a plural noun:")
+celebrity  = input("Enter a celebrity")
+print("roses are "+ color )
+print(plural_noun +" are blu")
+print("I love "+ celebrity)
+'''
 
 # lists
 freinds = ["shebl", "khater", "jim", 32, True, "ahmed"]
@@ -81,7 +92,7 @@ freinds.remove(freinds[6])  # removing ahmed  from the list
 print(freinds)
 # freinds.clear()             # clear the list
 print(freinds)
-freinds.pop()  # it pops the last element out of the list
+x = freinds.pop()  # it pops the last element out of the list and stores it in x, we can choose the element by insiting its index in the parenthesis
 print(freinds)
 print("the index", freinds.index("khater"))
 
@@ -94,7 +105,7 @@ print(lucky_number)
 freinds2 = freinds.copy()
 print(freinds2)
 
-###    tuples is a kind of structure that are usually used for data that are not goona change
+###    tuples is a kind of structure that are usually used for data that are not gonna change
 coordinats = (4, 5)  # it was at 1:19 minits of the vedio
 print("tuples ", coordinats[0])
 # coordinats[1] = 4                   # this is an error because tuples are immutable
@@ -130,7 +141,7 @@ else:
 if is_male and is_tall:
     print('you are a male and tall')
 elif is_male and not (is_tall):
-    print("you are a short mall")
+    print("you are a short male")
 else:
     print("you are either not male or not tall or both")
 
@@ -148,16 +159,17 @@ def max_num(num1, num2, num3):
 print(max_num(1, 2, 3))
 
 # getting values from the user and add them
-# num1 = float(input("Enter the first number:"))
-# op = input("Enter the operator :")
-# num2 = float(input("Enter the second number:"))
-# if op == "+":
-#    print(num1 + num2)
-# elif op == "-":
-#    print(num1 -num2)
-# else:
-#    print("invalid operater")
-
+'''
+num1 = float(input("Enter the first number:"))
+op = input("Enter the operator :")
+num2 = float(input("Enter the second number:"))
+if op == "+":
+    print(num1 + num2)
+elif op == "-":
+    print(num1 - num2)
+else:
+    print("invalid operater")
+'''
 
 # dictionaries in python
 month_conversions = {
@@ -165,7 +177,7 @@ month_conversions = {
     # key    element
     "feb": "february",
     "mar": "march",
-    "E":10
+    "E": 10
 }
 print(month_conversions["jan"])
 print(month_conversions["E"])
@@ -289,36 +301,45 @@ except ValueError as err:
 # reading an external file _______
 
 employee_file = open("empolyee.txt", "r")
+list_file = employee_file.read()
+# print(list_file)
+print(list_file[0:])
 print(employee_file.readable())
 # print(employee_file.read())
+# employ = employee_file.readline()
 # print(employee_file.readline())
+'''
 for employ in employee_file.readlines():
     print(employ)
-print("the employ zero: ", employ[0:])
-# print(employee_file.readlines()[0])
+'''
+# print("the employ zero: ", employ[0:])
+# print(employee_file.readlines()[1])
 # print(employee_file.readlines())
 employee_file.close()
 
 # writting and appending onto a file
 employee_file = open("empolyee.txt", "a")
-#employee_file.write("\nToby - Human resources")
+# employee_file.write("\nToby - Human resources")
 employee_file.close()
 
 # create a new file for writing _________
 html_file = open("index.html", "w")
-html_file.write('<p>This is HTML </p>')
+html_file.write("<p>This is HTML </p>")
 html_file.close()
 
 # modules and pip _________________
-
-print(useful_tools.roll_dice(4))
+print("____________________________")
+print(useful_tools.roll_dice(7))
+print(useful_tools.get_file_ext("employee.txt"))
+print("____________________________")
 
 # classes and objects __________________
 
 student1 = student("jim", "business", 3.1, False)  # student object is defined in the imported student file
 student2 = student("pam", "ART", 3.2, True)
-print(student2.name + " " + str(student2.gpa))
+print(student2.name + " " + str(student1.gpa))
 print(student2.ay7aga)
+print(",,,,,,,,,,,,,,,,,,,,,,,,,,,,")
 
 # building a multiple choice quiz ____________________
 
@@ -344,6 +365,8 @@ def run_test(questions):
 
 run_test(questions)
 '''
+new_list = list_t(freinds)
+new_list.print_list()
 
 # object functions  _____________
 student1 = student("oscar", "accounting", 3.1, False)
@@ -352,32 +375,39 @@ student2 = student("phyllis", "business", 3.8, True)
 print(student2.on_honor_roll())
 
 # inheritance __________________
-
+'''
+is basically to have a class that have all the functionalities of another class
+'''
 my_chef = chinese_chef()
 my_chef.make_chicken()
 my_chef.make_fried_rice()
 
 
 def to_binary(x):
-    list =[]
+    list = []
     base = 2
-    while int(x/base) > 0 or (x % base) != 0:
+    while int(x / base) > 0 or (x % base) != 0:
         list.append(x % 2)
-        x = int(x/base)
-    #list.append(x % 2)
+        x = int(x / base)
+    # list.append(x % 2)
+
     list.reverse()
     print("the binary conversion is : " + str(list))
 
+
 to_binary(300)
+
 
 def to_decimal(x):
     res = 0
     i = 0
     while int(x / 10) > 0 or (x % 10) != 0:
-        res = res + ((x % 10) * 2**i)
-        x = int(x/10)
+        res = res + ((x % 10) * 2 ** i)
+        x = int(x / 10)
         i += 1
     print("the decimal conversion is : " + str(res))
+
+
 to_decimal(11000000)
 
 '''
@@ -392,3 +422,26 @@ def generate_binary(index, base, list):
 list = [0, 0, 0]
 generate_binary(0, 2, list)
 '''
+s1 = "salem "
+s2 = "mohamed"
+s3 = s1 + s2
+print(s3)
+s4 = s1[:3] + " aaaaa " + s1[3:]
+print(s4)
+word = s4.split()
+print("word is", word)
+print("the number of aaaa is ", s4.count("aaaa"))
+L = [0] * 10  ########____________GREAAAAAAAAAT DISCOVERY___________
+print(L)
+
+df = pd.read_csv('sales_data.csv')
+profitList = df['total_profit'].tolist()
+monthList = df['month_number'].tolist()
+plt.plot(monthList, profitList, label='Month - wise Profit data of last year ')
+plt.xlabel('Month number')
+plt.ylabel('Profit in dollar')
+plt.xticks(monthList)
+plt.title('Company profit per month')
+plt.yticks([100000, 200000, 300000, 400000, 500000])
+plt.show()
+

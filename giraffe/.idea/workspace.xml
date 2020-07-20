@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="457066a7-281f-479c-b8cb-30216b75df94" name="Default Changelist" comment="" />
+    <list default="true" id="457066a7-281f-479c-b8cb-30216b75df94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list_t.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sales_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hexadecimal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hexadecimal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empolyee.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empolyee.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../try" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,20 +27,28 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1bUncbQDReDPitgSwKP0TuqAXnD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.py" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\open-and-virtualized-networks-\giraffe" />
       <recent name="D:\open-and-virtualized-network\giraffe" />
     </key>
   </component>
@@ -95,6 +113,9 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" key="#Inspections" timestamp="1589072892223">
       <screen x="0" y="0" width="1280" height="680" />
@@ -104,10 +125,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1588696043499" />
-    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590410496023">
+    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595172101906">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1590410496023" />
+    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1595172101906" />
     <state x="73" y="147" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589068491148">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -116,53 +137,61 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="40" y="0" key="#scratch/0.0.1280.680@0.0.1280.680" timestamp="1589032036246" />
-    <state x="325" y="95" key="FileChooserDialogImpl" timestamp="1590410493350">
+    <state x="325" y="95" key="FileChooserDialogImpl" timestamp="1595172100551">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="325" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590410493350" />
-    <state width="632" height="172" key="GridCell.Tab.0.bottom" timestamp="1590573165630">
+    <state x="325" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1595172100551" />
+    <state width="1279" height="192" key="GridCell.Tab.0.bottom" timestamp="1595262766855">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="632" height="172" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
-    <state width="632" height="172" key="GridCell.Tab.0.center" timestamp="1590573165630">
+    <state width="1279" height="192" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1595262766855" />
+    <state width="1279" height="192" key="GridCell.Tab.0.center" timestamp="1595262766855">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="632" height="172" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
-    <state width="632" height="172" key="GridCell.Tab.0.left" timestamp="1590573165630">
+    <state width="1279" height="192" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1595262766855" />
+    <state width="1279" height="192" key="GridCell.Tab.0.left" timestamp="1595262766855">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="632" height="172" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
-    <state width="632" height="172" key="GridCell.Tab.0.right" timestamp="1590573165630">
+    <state width="1279" height="192" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1595262766855" />
+    <state width="1279" height="192" key="GridCell.Tab.0.right" timestamp="1595262766855">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="632" height="172" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590573165630" />
-    <state width="1259" height="204" key="GridCell.Tab.1.bottom" timestamp="1589724096423">
+    <state width="1279" height="192" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1595262766855" />
+    <state width="1281" height="204" key="GridCell.Tab.1.bottom" timestamp="1595176177196">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
-    <state width="1259" height="204" key="GridCell.Tab.1.center" timestamp="1589724096423">
+    <state width="1281" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1595176177196" />
+    <state width="1281" height="204" key="GridCell.Tab.1.center" timestamp="1595176177196">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
-    <state width="1259" height="204" key="GridCell.Tab.1.left" timestamp="1589724096423">
+    <state width="1281" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1595176177196" />
+    <state width="1281" height="204" key="GridCell.Tab.1.left" timestamp="1595176177196">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
-    <state width="1259" height="204" key="GridCell.Tab.1.right" timestamp="1589724096423">
+    <state width="1281" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1595176177196" />
+    <state width="1281" height="204" key="GridCell.Tab.1.right" timestamp="1595176177196">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1589724096423" />
-    <state x="0" y="0" key="SettingsEditor" timestamp="1588720047732">
+    <state width="1281" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1595176177196" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1595262074501">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588720047732" />
-    <state x="23" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1590410382877">
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1595262074501" />
+    <state x="23" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1595231103950">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="23" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1590410382877" />
-    <state x="-17" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1589723096253">
+    <state x="23" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1595231103950" />
+    <state x="449" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595259829677">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="-17" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1589723096253" />
+    <state x="449" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1595259829677" />
+    <state x="213" y="77" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1595080732301">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="213" y="77" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1595080732301" />
+    <state x="-17" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1595146334232">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="-17" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1595146334232" />
   </component>
 </project>

@@ -7,6 +7,7 @@ class student:
         self.is_on_probation = is_on_probation
 
     def on_honor_roll(self):
+        var = self.ay7aga
         if self.gpa >= 3.5:
             return True
         else:
