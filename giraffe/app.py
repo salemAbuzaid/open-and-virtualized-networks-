@@ -179,6 +179,7 @@ month_conversions = {
     "mar": "march",
     "E": 10
 }
+print(month_conversions.keys())
 print(month_conversions["jan"])
 print(month_conversions["E"])
 print(month_conversions.get("jan"))
