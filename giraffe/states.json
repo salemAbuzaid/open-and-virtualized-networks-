@@ -150,6 +150,11 @@
       "abbreviation": "NJ",
       "area_codes": ["201", "551", "609", "732", "848", "856", "862", "908", "973"]
     },
+	{
+      "name": "New Jersey",
+      "abbreviation": "NJ",
+      "area_codes": ["201", "551", "609", "732", "848", "856", "862", "908"]
+    },
     {
       "name": "New Mexico",
       "abbreviation": "NM",
