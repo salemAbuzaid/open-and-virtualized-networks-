@@ -434,13 +434,8 @@ print("the number of aaaa is ", s4.count("aaaa"))
 L = [0] * 10  ########____________GREAAAAAAAAAT DISCOVERY___________
 print(L)
 
-df = pd.read_csv('sales_data.csv')
-profitList = df['total_profit'].tolist()
-monthList = df['month_number'].tolist()
-plt.plot(monthList, profitList, label='Month - wise Profit data of last year')
-plt.xlabel('Month number')
-plt.ylabel('Profit in dollar')
-plt.xticks(monthList)
-plt.title('Company profit per month')
-plt.yticks([100000, 200000, 300000, 400000, 500000])
-plt.show()
+LL = [1,3,4][0]
+print(LL)
+x=16 *\
+    (4)
+print("x= " ,x)
