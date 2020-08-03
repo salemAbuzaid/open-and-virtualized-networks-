@@ -9,18 +9,21 @@ class Line(object):
         self._label = line_dict['label']
         self._length = line_dict['length'] * 1e3
         self._amplifiers = int(np.ceil(self._length / 80e3))
-        self._span_length = self._length / self._amplifiers
+        self._span_length = self._length/self._amplifiers
         self._Nch = line_dict['Nch']
-        self.state = ['free']*self._Nch
+        self._state = ['free']*self._Nch
         # Set Gain to transparency
-        self._noise_figure = 5
+        self._noise_figure = 7
         # Physical Parameters of the Fiber
         self._alpha = 4.6e-5
         self._beta = 21.27e-27
         self._gamma = 1.27e-3
-        self._state = ['free'] * 10
         self._successive = {}
         self._gain = self.transparency()
+
+    @property
+    def Nch(self):
+        return self._Nch
 
     @property
     def label(self):
@@ -106,21 +109,19 @@ class Line(object):
         ase_noise = N * h * f * Bn * noise_figure_lin * (gain_lin - 1)
         return ase_noise
 
-    def nli_generation(self, signal_power, Rs, df):
-        Nch = self._Nch
+    def nli_generation(self, signal_power, rs, df, Bn=12.5e9):
         Pch = signal_power
-        Bn = 12.5e9
-        loss = np.exp(- self.alpha * self.span_length)  # modified this line
+        loss = np.exp(- self.alpha * self.span_length)
         gain_lin = 10 ** (self.gain / 10)
         N_spans = self.amplifiers
-        eta = 16 / (27 * pi) * \
-              np.log(pi ** 2 * self.beta * Rs ** 2 * \
-                     Nch ** (2 * Rs / df) / (2 * self.alpha)) * \
-              self.gamma ** 2 / (4 * self.alpha * self.beta * Rs ** 3)
+        eta = 16 / (27 * pi) *\
+            self.gamma ** 2 / (4 * self.alpha * self.beta * rs ** 3) * \
+            np.log(pi ** 2 * self.beta * rs ** 2 * self.Nch ** \
+            (2 * rs / df) / (2 * self.alpha))
         nli_noise = N_spans * (Pch ** 3 * loss * gain_lin * eta * Bn)
         return nli_noise
 
-    def propagate(self, lightpath, occupation=False):
+    def propagate(self, lightpath , occupation=False):
         # Update latency
         latency = self.latency_generation()
         lightpath.add_latency(latency)
@@ -140,3 +141,7 @@ class Line(object):
         node = self.successive[lightpath.path[0]]
         lightpath = node.propagate(lightpath, occupation)
         return lightpath
+
+    @noise_figure.setter
+    def noise_figure(self, value):
+        self._noise_figure = value

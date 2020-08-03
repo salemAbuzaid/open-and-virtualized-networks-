@@ -70,7 +70,7 @@ class Line(object):
         if set(state).issubset(set(['free', 'occupied'])):
             self._state = state
         else:
-            print('ERROR: line state  not recognized.Value:', set(state) - set(['free', 'occupied']))
+            print('ERROR: line state not recognized.Value:', set(state) - set(['free', 'occupied']))
 
     @property
     def successive(self):
@@ -91,7 +91,6 @@ class Line(object):
 
     def noise_generation(self, lightpath):
         noise = self.ase_generation() + self.nli_generation(lightpath.signal_power, lightpath.rs, lightpath.df)
-
         return noise
 
     def ase_generation(self):

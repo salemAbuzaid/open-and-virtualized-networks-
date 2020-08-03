@@ -4,61 +4,58 @@
    "B",
    "C",
    "D",
-   "L"
+   "S"
   ],
   "position": [
-   -350,
-   150
+   -950,
+   200
   ]
  },
  "B": {
   "connected_nodes": [
    "A",
    "D",
-   "F",
-   "L"
+   "F"
   ],
   "position": [
    -100,
-   400
+   1000
   ]
  },
  "C": {
   "connected_nodes": [
    "A",
-   "D",
    "E",
+   "L",
    "M"
   ],
   "position": [
-   -200,
-   -300
+   -1100,
+   -900
   ]
  },
  "D": {
   "connected_nodes": [
    "A",
    "B",
-   "C",
-   "E",
    "F",
-   "S"
+   "M",
+   "L"
   ],
   "position": [
    0,
-   0
+   -550
   ]
  },
  "E": {
   "connected_nodes": [
    "C",
-   "D",
    "F",
    "S"
   ],
   "position": [
-   150,
-   -350
+   1250,
+   -600
   ]
  },
  "F": {
@@ -68,41 +65,41 @@
    "E"
   ],
   "position": [
-   300,
+   900,
    250
   ]
- },
+ }
+,
  "S": {
   "connected_nodes": [
-   "L",
-   "D",
+   "A",
    "E"
   ],
   "position": [
-   150,
-   250
+   950,
+   1000
   ]
- },
+ }
+,
  "L": {
   "connected_nodes": [
-   "S",
    "B",
-   "A",
-   "M"
-  ],
-  "position": [
-   -150,
-   150
-  ]
- },
- "M": {
-  "connected_nodes": [
-   "L",
    "C"
   ],
   "position": [
-   -350,
-   -50
+   -1000,
+   1050
+  ]
+ }
+,
+ "M": {
+  "connected_nodes": [
+   "D",
+   "C"
+  ],
+  "position": [
+   1000,
+   -900
   ]
  }
 }

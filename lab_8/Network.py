@@ -165,15 +165,14 @@ class Network(object):
             route_space[str(i)] = ['free'] * len(paths)
         self._route_space = route_space
 
-    def available_paths(self, input_node, output_node):  # path liberi per quella copia di nodi ma su tutti i canali
+    def available_paths(self, input_node, output_node): # available paths between two nodes if there are free channels
         if self.weighted_paths is None:
             self.set_weighted_paths()
         all_paths = [path for path in self.weighted_paths.path.values
                      if ((path[0] == input_node) and (path[-1] == output_node))]
         available_paths = []
         for path in all_paths:
-            path_occupancy = self.route_space.loc[self.route_space.path == path].T.values[
-                             1:]  # route space è lista di path con una entry per ogni lambda
+            path_occupancy = self.route_space.loc[self.route_space.path == path].T.values[1:]  # route space è lista di path con una entry per ogni lambda
             if 'free' in path_occupancy:  # se i canali sono tuttio occupati esclude il path
                 available_paths.append(path)
         return available_paths
@@ -214,7 +213,7 @@ class Network(object):
             if path:
                 path_occupancy = self.route_space. \
                                      loc[self.route_space.path == path].T.values[1:]
-                channel = [i for i in range(len(path_occupancy)) if path_occupancy[i] == 'free'][0]  # prende il primo canale libero
+                channel = [i for i in range(len(path_occupancy)) if path_occupancy[i] == 'free'][0]  # it takes the first free channel
 
                 path = path.replace('->', '')
                 in_lightpath = Lightpath (path , channel , transceiver = transceiver )
@@ -229,7 +228,7 @@ class Network(object):
                     connection.latency = None
                     connection.snr = 0
                     connection.bitrate = 0
-                self.update_route_space(path, channel)  # elimina il lighpath
+                self.update_route_space(path, channel)  # updates the occupancy of channel in that path
             else:
                 connection.latency = None
                 connection.snr = 0

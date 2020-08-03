@@ -7,18 +7,19 @@ import numpy as np
 from Node import Node
 from Line import Line
 from Lightpath import Lightpath
-import itertools as it
+from Connection import Connection
 
 
 class Network(object):
-    def __init__(self, json_path ,Nch = 10 ,upgrade_line = ''):
+    def __init__(self, json_path, nch = 10 , upgrade_line =''):
         node_json = json.load(open(json_path, 'r'))
         self._nodes = {}
         self._lines = {}
         self._connected = False
         self._weighted_paths = None
         self._route_space = None
-        self._Nch = Nch
+        self._Nch = nch
+
         for node_label in node_json:
             # Create the node instance
             node_dict = node_json[node_label]
@@ -32,16 +33,18 @@ class Network(object):
                 line_label = node_label + connected_node_label
                 line_dict['label'] = line_label
                 node_position = np.array(node_json[node_label]['position'])
-                connected_node_position = np.array(node_json[connected_node_label]['position'])
-                line_dict['length'] = np.sqrt(np.sum((node_position - connected_node_position) ** 2))
-                line_dict['Nch']= self._Nch
+                connected_node_position = np.array \
+                    (node_json[connected_node_label]['position'])
+                line_dict['length'] = np.sqrt \
+                    (np.sum((node_position - connected_node_position) ** 2))
+                line_dict['Nch'] = self.Nch
                 line = Line(line_dict)
                 self._lines[line_label] = line
+
         # if specified , upgrade line
-        '''
         if not upgrade_line == '':
             self.lines[upgrade_line].noise_figure = self.lines[upgrade_line].noise_figure - 3
-'''
+
     @property
     def Nch(self):
         return self._Nch
@@ -159,9 +162,7 @@ class Network(object):
 
                 latencies.append(lightpath.latency)
                 noises.append(lightpath.noise_power)
-                snrs.append(
-                    10 * np.log10(lightpath.signal_power / lightpath.noise_power)
-                )
+                snrs.append(10 * np.log10(lightpath.signal_power / lightpath.noise_power))
         df['path'] = paths
         df['latency'] = latencies
         df['noise'] = noises
@@ -170,19 +171,18 @@ class Network(object):
 
         route_space = pd.DataFrame()
         route_space['path'] = paths
-        for i in range(self._Nch):
+        for i in range(self.Nch):
             route_space[str(i)] = ['free'] * len(paths)
         self._route_space = route_space
 
-    def available_paths(self, input_node, output_node):  # path liberi per quella copia di nodi ma su tutti i canali
+    def available_paths(self, input_node, output_node):  # gives the available paths between two nodes over the all chanels
         if self.weighted_paths is None:
             self.set_weighted_paths()
-        all_paths = [path for path in self.weighted_paths.path.values
+        all_paths = [path for path in self.weighted_paths.path.values \
                      if ((path[0] == input_node) and (path[-1] == output_node))]
         available_paths = []
         for path in all_paths:
-            path_occupancy = self.route_space.loc[self.route_space.path == path].T.values[
-                             1:]  # route space è lista di path con una entry per ogni lambda
+            path_occupancy = self.route_space.loc[self.route_space.path == path].T.values[1:]  # route space è lista di path con una entry per ogni lambda
             if 'free' in path_occupancy:  # se i canali sono tuttio occupati esclude il path
                 available_paths.append(path)
         return available_paths
@@ -221,28 +221,30 @@ class Network(object):
                 print('ERROR: best input not recognized. Value:', best)
                 continue
             if path:
-                path_occupancy = self.route_space.loc [self.route_space.path == path].T.values[1:]
+                path_occupancy = self.route_space.loc[self.route_space.path == path ].T.values[1:]
+                channel = [i for i in range(len(path_occupancy)) \
+                       if path_occupancy[i] == 'free'][0]  # uses first free channel
+                path = path.replace('->','')
+                in_lightpath = Lightpath(path, channel, transceiver=transceiver)
+                in_lightpath = self.optimization(in_lightpath)
+                path = in_lightpath.path        # after the debugging
+                out_lightpath = self.propagate(in_lightpath, occupation=True)
+                out_lightpath.path = path       # after debugging
+                self.calculate_bitrate(out_lightpath)
 
-            channel = [i for i in range(len(path_occupancy)) if path_occupancy[i] == 'free'][0]  # uses first free channel
-            path = path.replace('->','')
-            in_lightpath = Lightpath(path, channel, transceiver=transceiver)
-            in_lightpath = self.optimization(in_lightpath)
-            out_lightpath = self.propagate(in_lightpath, occupation=True)
-            self.calculate_bitrate(out_lightpath)
-
-            if out_lightpath.bitrate == 0.0:
+                if out_lightpath.bitrate == 0.0:
+                    [self.update_route_space(lp.path, lp.channel, 'free') \
+                        for lp in connection.lightpaths ]
+                    connection.block_connection()
+                else:
+                    connection.set_connection(out_lightpath)
+                    self.update_route_space( \
+                    out_lightpath.path, out_lightpath.channel, 'occupied')
+                    if connection.residual_rate_request > 0:
+                        self.stream([connection], best, transceiver)
+            else:
                 [self.update_route_space(lp.path, lp.channel, 'free') for lp in connection.lightpaths ]
                 connection.block_connection()
-            else:
-                connection.set_connection(out_lightpath)
-                self.update_route_space( out_lightpath.path, out_lightpath.channel, 'occupied')
-
-            if connection.residual_rate_request > 0:
-                self.stream([connection], best, transceiver)
-            else:
-                [self.update_route_space(lp.path, lp.channel, 'free') for lp in connection.lightpaths ]
-                connection.block_connection()
-
             streamed_connections.append(connection)
         return streamed_connections
 
@@ -251,14 +253,15 @@ class Network(object):
         path = path.replace('->', '')
         return set([path[i] + path[i + 1] for i in range(len(path) - 1)])
 
-    def update_route_space(self, path, channel,state):
+
+    def update_route_space(self, path, channel, state):
         all_paths = [self.path_to_line_set(p) for p in self.route_space.path.values]
         states = self.route_space[str(channel)]
         lines = self.path_to_line_set(path)
         for i in range(len(all_paths)):
             line_set = all_paths[i]
             if lines.intersection(line_set):
-                states[i] = 'occupied'
+                states[i] = state
         self.route_space[str(channel)] = states
 
     def calculate_bitrate(self, lightpath, bert=1e-3):

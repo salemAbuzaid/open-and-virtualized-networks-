@@ -1,7 +1,6 @@
 import numpy as np
-
 class Connection(object):
-    def __init__(self, input_node, output_node, rate_request=0):
+    def __init__(self, input_node, output_node, rate_request =0):
         self._input_node = input_node
         self._output_node = output_node
         self._signal_power = None
@@ -13,12 +12,20 @@ class Connection(object):
         self._lightpaths = []
 
     @property
-    def rate_request(self):
+    def rate_request(self):             # for lab_9
         return self._rate_request
 
     @property
-    def residual_rate_request(self):
+    def residual_rate_request(self):        # for lab_9
         return self._residual_rate_request
+
+    @property
+    def lightpaths(self):
+        return self._lightpaths
+
+    @lightpaths.setter
+    def lightpaths(self, lightpath):         # for lab_9
+        self._lightpaths.append(lightpath)
 
     @property
     def input_node(self):
@@ -32,9 +39,10 @@ class Connection(object):
     def bitrate(self, bitrate):
         self._bitrate = bitrate
 
-    @property  # make sure about this
-    def calculate_capacity(self):
-        return self._bitrate
+    def calculate_capacity(self):           # for lab_9
+        self.bitrate = sum([lightpath.bitrate for lightpath in self.lightpaths])
+        return self.bitrate
+
 
     @property
     def output_node(self):
@@ -60,38 +68,24 @@ class Connection(object):
     def snr(self):
         return self._snr
 
-
-    @property
-    def lightpaths ( self ):
-        return self . _lightpaths
-
-    @lightpaths . setter
-    def lightpaths (self , lightpath ):
-        self . _lightpaths . append ( lightpath )
-
     @snr.setter
-    def snr (self , snr ):
-        self._snr . append ( snr)
+    def snr(self, snr):
+        self._snr.append(snr)
 
-    def clear_lightpaths ( self ):
-        self . _lightpaths = []
+    def clear_lightpaths(self):         # for lab_9
+        self._lightpaths = []
 
-    def calculate_capacity ( self ):
-        self . bitrate = sum ([ lightpath . bitrate for lightpath in self . lightpaths ])
-        return self . bitrate
-
-    def set_connection (self , lightpath ):
-        self . signal_power = lightpath . signal_power
-        self . latency = max( self . latency , lightpath . latency )
-        self . snr = 10 * np. log10 ( lightpath . snr)
-        self . lightpaths = lightpath
-        self . _residual_rate_request = \
-        self . _residual_rate_request - lightpath . bitrate
+    def set_connection(self, lightpath):         # for lab_9
+        self.signal_power = lightpath.signal_power
+        self.latency = max(self.latency, lightpath.latency)
+        self.snr = 10 * np.log10(lightpath.snr)
+        self.lightpaths = lightpath
+        self._residual_rate_request = self._residual_rate_request - lightpath.bitrate
         return self
 
-    def block_connection ( self ):
-        self . latency = None
-        self . snr = 0
-        self . bitrate = 0
-        self . clear_lightpaths ()
+    def block_connection(self):             # for lab_9
+        self.latency = None
+        self.snr = 0
+        self.bitrate = 0
+        self.clear_lightpaths()
         return self

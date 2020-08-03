@@ -7,7 +7,7 @@ import numpy as np
 from Node import Node
 from Line import Line
 from Lightpath import Lightpath
-import itertools as it
+from Connection import Connection
 
 
 class Network(object):
@@ -211,29 +211,30 @@ class Network(object):
             else:
                 print('ERROR: best input not recognized. Value:', best)
                 continue
-            if path:
-                path_occupancy = self.route_space.loc [self.route_space.path == path].T.values[1:]
+            if path:                # for lab_9
+                path_occupancy = self.route_space.loc  [self.route_space.path == path].T.values[1:]
+                channel = [i for i in range(len(path_occupancy)) \
+                       if path_occupancy[i] == 'free'][0]  # uses first free channel
+                path = path.replace('->','')
+                in_lightpath = Lightpath(path, channel, transceiver=transceiver)
+                in_lightpath = self.optimization(in_lightpath)
+                out_lightpath = self.propagate(in_lightpath, occupation=True)
+                self.calculate_bitrate(out_lightpath)
 
-            channel = [i for i in range(len(path_occupancy)) if path_occupancy[i] == 'free'][0]  # uses first free channel
-            path = path.replace('->','')
-            in_lightpath = Lightpath(path, channel, transceiver=transceiver)
-            in_lightpath = self.optimization(in_lightpath)
-            out_lightpath = self.propagate(in_lightpath, occupation=True)
-            self.calculate_bitrate(out_lightpath)
-
-            if out_lightpath.bitrate == 0.0:
-                [self.update_route_space(lp.path, lp.channel, 'free') for lp in connection.lightpaths ]
-                connection.block_connection()
+                if out_lightpath.bitrate == 0.0:
+                    [self.update_route_space(lp.path, lp.channel, 'free') \
+                        for lp in connection.lightpaths ]
+                    connection.block_connection()
+                else:
+                    connection.set_connection(out_lightpath)
+                    self.update_route_space( \
+                    out_lightpath.path, out_lightpath.channel, 'occupied')
+                    if connection.residual_rate_request > 0:
+                        self.stream([connection], best, transceiver)
             else:
-                connection.set_connection(out_lightpath)
-                self.update_route_space( out_lightpath.path, out_lightpath.channel, 'occupied')
-
-            if connection.residual_rate_request > 0:
-                self.stream([connection], best, transceiver)
-            else:
-                [self.update_route_space(lp.path, lp.channel, 'free') for lp in connection.lightpaths ]
+                [self.update_route_space(lp.path, lp.channel, 'free') \
+                        for lp in connection.lightpaths ]
                 connection.block_connection()
-
             streamed_connections.append(connection)
         return streamed_connections
 
@@ -242,6 +243,7 @@ class Network(object):
         path = path.replace('->', '')
         return set([path[i] + path[i + 1] for i in range(len(path) - 1)])
 
+    # for lab_9
     def update_route_space(self, path, channel, state):
         all_paths = [self.path_to_line_set(p) for p in self.route_space.path.values]
         states = self.route_space[str(channel)]

@@ -11,7 +11,7 @@ class Line(object):
         self._amplifiers = int(np.ceil(self._length / 80e3))
         self._span_length = self._length / self._amplifiers
         # Set Gain to transparency
-        self._noise_figure = 5
+        self._noise_figure = 7
         # Physical Parameters of the Fiber
         self._alpha = 4.6e-5
         self._beta = 21.27e-27
@@ -82,7 +82,6 @@ class Line(object):
 
     def transparency(self):
         gain = 10 * np.log10(np.exp(self.alpha * self.span_length))
-
         return gain
 
     def latency_generation(self):
